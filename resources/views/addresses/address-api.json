@@ -1,0 +1,159 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Address API",
+      "description": "ADDRESS API"
+    },
+    "paths": {
+      "/api/addresses": {
+        "post": {
+          "summary": "Create a new address",
+          "description": "Add a new address to the database",
+          "parameters": [
+            {
+              "name": "street",
+              "in": "formData",
+              "description": "Street address",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "in": "formData",
+              "description": "City",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "province",
+              "in": "formData",
+              "description": "Province",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "country",
+              "in": "formData",
+              "description": "Country",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "postal_code",
+              "in": "formData",
+              "description": "Postal code",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Address created successfully"
+            }
+          }
+        },
+        "get": {
+          "summary": "Get list of addresses",
+          "description": "Retrieve a list of all addresses",
+          "responses": {
+            "200": {
+              "description": "Addresses retrieved successfully"
+            }
+          }
+        }
+      },
+      "/api/addresses/{id}": {
+        "get": {
+          "summary": "Get address details",
+          "description": "Retrieve details of a specific address",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of the address",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Address details retrieved successfully"
+            }
+          }
+        },
+        "put": {
+          "summary": "Update address details",
+          "description": "Update details of a specific address",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of the address",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "street",
+              "in": "formData",
+              "description": "Street address",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "in": "formData",
+              "description": "City",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "province",
+              "in": "formData",
+              "description": "Province",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "country",
+              "in": "formData",
+              "description": "Country",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "postal_code",
+              "in": "formData",
+              "description": "Postal code",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Address details updated successfully"
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete an address",
+          "description": "Remove a specific address from the database",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of the address",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Address removed successfully"
+            }
+          }
+        }
+      }
+    }
+  }
+  
